@@ -5,26 +5,82 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthwindCRUD"
         mc:Ignorable="d"
-        Title="Login" Height="400" Width="700" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+        Title="Northwind - CRUD" Height="568" Width="856" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize"
+        Background="Transparent" AllowsTransparency="True" WindowStyle="None">
+    <Border Background="{StaticResource negroBrocha}" BorderThickness="0" BorderBrush="Transparent" CornerRadius="21">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-        <TextBlock Text="Usuario:" Margin="10,159,10,0" VerticalAlignment="Top" Grid.Row="3"/>
-        <TextBox Name="txtUsuario" Margin="10,87,10,-47" Grid.Row="3" Height="25"/>
+            <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"
+                   FontWeight="Bold"
+                   FontSize="64"
+                   Text="NORTHWIND"
+                   TextAlignment="Center"
+                           VerticalAlignment="Center"
+                   Margin="0, 0, 10, 0"
+                   Foreground="{StaticResource verdeBrocha}"
+                   Style="{StaticResource NeonGlowStyle}"/>
+                <Image Grid.Column="1"
+               Source="Images/bd.png"
+               Height="120"
+               VerticalAlignment="Center"/>
+            </Grid>
+            <StackPanel Grid.Row="2" Margin="0, 60, 0, 20" Width="234">
+                <TextBlock FontWeight="Bold" Text="Usuario" VerticalAlignment="Top" Foreground="{StaticResource verdeBrocha}" FontSize="16"/>
+                <TextBox Name="txtUsuario"  Height="25" Background="Transparent" FontSize="16" Foreground="{StaticResource verdeBrocha}" BorderBrush="{StaticResource grisBrocha}" BorderThickness="0, 0, 0, 1"/>
+            </StackPanel>
 
-        <TextBlock Text="Contraseña:" Margin="10,234,10,0" VerticalAlignment="Top" Grid.Row="3"/>
-        <PasswordBox Name="txtPassword" Margin="10,255,10,-30" Grid.Row="3" Height="25"/>
+            <StackPanel Grid.Row="3" Margin="0, 20, 0, 0" Width="234">
+                <TextBlock FontWeight="Bold" Text="Contraseña" VerticalAlignment="Top" Foreground="{StaticResource verdeBrocha}" FontSize="16"/>
+                <PasswordBox Name="txtPassword" Height="25" Background="Transparent" FontSize="16" Foreground="{StaticResource verdeBrocha}" BorderBrush="{StaticResource grisBrocha}" BorderThickness="0, 0, 0, 1"/>
+            </StackPanel>
 
-        <TextBlock Name="txtError" TextAlignment="Center" Text="Usuario o contraseña incorrectos" Margin="252,284,252,-51" Grid.Row="3" Foreground="Red" Visibility="Hidden"/>
+            <TextBlock Name="txtError" TextAlignment="Center" Text="Usuario o contraseña incorrectos" Margin="10" Grid.Row="4" Foreground="Red" Visibility="Hidden"/>
 
-        <Button Content="Iniciar sesión" Margin="0,306,0,-86" Grid.Row="3" Height="30" Width="150" HorizontalAlignment="Center" Click="Button_Click"/>
-    </Grid>
+            <Button Content="Entrar" Margin="30" HorizontalAlignment="Center" Click="Button_Click" Grid.Row="5" Style="{StaticResource EstiloBotonVerde}"/>
+
+            <Button 
+          Width="20"
+          Height="20"
+          Content="-"
+          FontSize="12"
+          Foreground="{StaticResource negroBrocha}"
+          Background="{StaticResource verdeBrocha}"
+          Style="{StaticResource RoundedCornerButtonStyle}" 
+          BorderBrush="Transparent"
+          Cursor="Hand"
+          Click="Button_Click_2"
+          ToolTip="Minimizar" Margin="801,10,35,20"
+          FontWeight="Bold"/>
+
+            <Button
+          Width="20"
+          Height="20"
+          Content="X"
+          FontWeight="Bold"
+          FontSize="12"
+          Foreground="{StaticResource negroBrocha}"
+          Background="{StaticResource verdeBrocha}"
+          Style="{StaticResource RoundedCornerButtonStyle}"
+          BorderBrush="Transparent"
+          Cursor="Hand"
+          Click="Button_Click_1"
+          ToolTip="Cerrar" Margin="826,10,10,20"/>
+        </Grid>
+    </Border>
+    
 </Window>

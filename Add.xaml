@@ -1,0 +1,62 @@
+﻿<Page x:Class="NorthwindCRUD.Add"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NorthwindCRUD"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="550"
+      Title="Add" Background="{StaticResource negroBrocha}">
+
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="0" Margin="30, 10, 0, 5">
+            <Image Source="Images/Add_verde.png" Height="30" Margin="10"></Image>
+            <TextBlock HorizontalAlignment="Center" Margin="10" VerticalAlignment="Center" Text="AGREGAR" FontSize="18" FontWeight="Bold" Foreground="{StaticResource verdeBrocha}"></TextBlock>
+        </WrapPanel>
+        <StackPanel Grid.Row="1" Orientation="Vertical" Background="Transparent">
+            <StackPanel Orientation="Vertical" Margin="90, 10, 0, 0">
+                <TextBlock FontSize="16" FontWeight="DemiBold" Text="Producto" Foreground="{StaticResource verdeBrocha}"></TextBlock>
+                <TextBox BorderThickness="0, 0, 0, 1" Foreground="{StaticResource verdeBrocha}" HorizontalAlignment="Left" Name="tbNombre" Width="234" Height="20" Background="Transparent" BorderBrush="{StaticResource grisBrocha}"></TextBox>
+            </StackPanel>
+            <WrapPanel Margin="90, 20, 0, 5">
+                <StackPanel>
+                    <TextBlock FontSize="16" FontWeight="DemiBold" Text="Categoría" Foreground="{StaticResource verdeBrocha}" Margin="0, 5, 0, 5"></TextBlock>
+                    <ComboBox Style="{StaticResource GreenComboBoxStyle}" Name="cbCategoria" Margin="0, 5, 0, 5"></ComboBox>
+                </StackPanel>
+                <Button VerticalAlignment="Center" Click="Button_Click" Content="Agregar" Style="{StaticResource EstiloBotonVerde}" FontWeight="Medium" Width="120" Height="25" Margin="90, 20, 0, 0"></Button>
+            </WrapPanel>
+            <TextBlock TextAlignment="Center" Text="Este TextBlock sirve para mostrar mensajes" Foreground="{StaticResource rojoBrocha}" x:Name="tbError" Width="225" Margin="0, 0, 0, 5"></TextBlock>
+        </StackPanel>
+        <Grid Grid.Row="2" Margin="35, 0, 35, 15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <DataGrid HeadersVisibility="Column" AutoGenerateColumns="False"
+          Grid.Row="0" Margin="0,0,0,2" 
+          Style="{StaticResource CustomDataGrid}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="PRODUCTOS" Binding="{Binding ProductName}" />
+                    <DataGridTextColumn Header="CATEGORÍA" Binding="{Binding CategoryName}" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Border Grid.Row="1" BorderBrush="{StaticResource verdeBrocha}" BorderThickness="1">
+                <DataGrid AutoGenerateColumns="False"
+              HeadersVisibility="None"
+              Style="{StaticResource CustomDataGrid}" Name="ProductosDataGrid">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding ProductName}" />
+                        <DataGridTextColumn Binding="{Binding CategoryName}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

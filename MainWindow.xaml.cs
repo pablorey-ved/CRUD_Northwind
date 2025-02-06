@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,12 @@ namespace NorthwindCRUD
         public MainWindow()
         {
             InitializeComponent();
+            Closing += MainWindow_Closing;
+        }
+
+        private void MainWindow_Closing(object sender, CancelEventArgs e)
+        {
+            DBManager.CloseConnection();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -38,6 +45,16 @@ namespace NorthwindCRUD
                 crud.Show();
                 Close();
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
         }
     }
 }

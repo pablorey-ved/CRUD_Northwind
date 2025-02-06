@@ -5,8 +5,75 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthwindCRUD"
         mc:Ignorable="d"
-        Title="CRUDWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="CRUDWindow" Height="568" Width="856" Background="Transparent" AllowsTransparency="True" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
+    <Border Background="{StaticResource negroBrocha}" BorderThickness="0" BorderBrush="Transparent" CornerRadius="21">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Border CornerRadius="21, 0, 0, 21" Grid.Column="0" Background="{StaticResource verdeBrocha}" Margin="5">
+                <StackPanel>
+                    <WrapPanel HorizontalAlignment="Center" Margin="15">
+                        <TextBlock Text="NORTHWIND" VerticalAlignment="Center" FontSize="22" HorizontalAlignment="Center" FontWeight="ExtraBold" Style="{StaticResource NeonGlowStyle}" Foreground="{StaticResource negroBrocha}"></TextBlock>
+                        <Image Source="Images/bd.png" Height="50"></Image>
+                    </WrapPanel>
+                    <Grid Margin="20, 50, 0, 50">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Image Style="{StaticResource ImageHover}" Name="homeImg" Tag="InicioPage" Grid.Column="0" Grid.Row="0" Margin="10" Source="Images/Home.png" Height="26" MouseLeftButtonUp="Image_MouseLeftButtonUp_1"></Image>
+                        <Button FontSize="18" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0" x:Name="btnInicio" Content="INICIO" FontWeight="Bold" Style="{StaticResource NavButtonStyle}" Tag="InicioPage" Click="btnInicio_Click" Foreground="{StaticResource negroBrocha}"></Button>
+                        <Image Style="{StaticResource ImageHover}" x:Name="addImg" Tag="AgregarPage" Grid.Column="0" Grid.Row="1" Margin="10" Source="Images/Add.png" Height="26" MouseLeftButtonUp="Image_MouseLeftButtonUp_1"></Image>
+                        <Button FontSize="18" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" x:Name="btnAgregar" FontWeight="Bold" Content="AGREGAR" Style="{StaticResource NavButtonStyle}" Tag="AgregarPage" Click="btnInicio_Click" Foreground="{StaticResource negroBrocha}"></Button>
+                        <Image Style="{StaticResource ImageHover}" Name="updateImg" Tag="ModificarPage" Grid.Column="0" Grid.Row="2" Margin="10" Source="Images/Update.png" Height="26" MouseLeftButtonUp="Image_MouseLeftButtonUp_1"></Image>
+                        <Button FontSize="18" HorizontalAlignment="Left" Grid.Column="2" Grid.Row="2" x:Name="btnModificar" FontWeight="Bold" Content="MODIFICAR" Style="{StaticResource NavButtonStyle}" Tag="ModificarPage" Click="btnInicio_Click" Foreground="{StaticResource negroBrocha}"></Button>
+                        <Image Style="{StaticResource ImageHover}" Name="deleteImg" Tag="BorrarPage" Grid.Column="0" Grid.Row="3" Margin="10" Source="Images/Delete.png" Height="26" MouseLeftButtonUp="Image_MouseLeftButtonUp_1"></Image>
+                        <Button FontSize="18" HorizontalAlignment="Left" Grid.Column="3" Grid.Row="3" x:Name="btnBorrar" FontWeight="Bold" Content="BORRAR" Style="{StaticResource NavButtonStyle}" Tag="BorrarPage" Click="btnInicio_Click" Foreground="{StaticResource negroBrocha}"></Button>
+
+                    </Grid>
+                    <Image Source="Images/LogOut.png" Height="30" HorizontalAlignment="Left" Margin="30, 130, 0, 0" MouseLeftButtonUp="Image_MouseLeftButtonUp" Style="{StaticResource ImageHover}"></Image>
+                </StackPanel>
+
+            </Border>
+
+            <Border Grid.Column="1" Background="White" Margin="30" CornerRadius="5">
+                <Frame Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
+            </Border>
+
+            <Button 
+  Width="20"
+  Height="20"
+  Content="-"
+  FontSize="12"
+  Foreground="{StaticResource negroBrocha}"
+  Background="{StaticResource verdeBrocha}"
+  Style="{StaticResource RoundedCornerButtonStyle}"
+  BorderBrush="Transparent"
+  Cursor="Hand"
+  Click="Button_Click_2"
+  ToolTip="Minimizar" Margin="551,10,35,538" Grid.Column="1" FontWeight="Bold"/>
+
+            <Button
+  Width="20"
+  Height="20"
+  Content="X"
+  FontSize="12"
+  Foreground="{StaticResource negroBrocha}"
+  Background="{StaticResource verdeBrocha}"
+  Style="{StaticResource RoundedCornerButtonStyle}"
+  BorderBrush="Transparent"
+  Cursor="Hand"
+  Click="Button_Click_1"
+  ToolTip="Cerrar" Margin="576,10,10,538" Grid.Column="1" FontWeight="Bold"/>
+        </Grid>
+    </Border>
 </Window>

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\2_DAM\INTERFACES\NorthwindCRUD\App.xaml
-2-200147649
+7-225249523
 
-8-679949948
+121574117138
 33-1504252403
-CRUDWindow.xaml;MainWindow.xaml;
+Add.xaml;CRUDWindow.xaml;Delete.xaml;Home.xaml;MainWindow.xaml;Styles.xaml;Update.xaml;
 
 False
 
